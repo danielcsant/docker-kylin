@@ -1,4 +1,5 @@
 FROM sequenceiq/ambari:1.6.0-warmup
+172.19.1.72     sandbox.hortonworks.com
 MAINTAINER SequenceIQ
 
 RUN curl -s http://apache.proserve.nl/maven/maven-3/3.2.3/binaries/apache-maven-3.2.3-bin.tar.gz | tar -xz -C /usr/local/
@@ -10,8 +11,8 @@ RUN cd /usr/local/kylin && mvn clean install -DskipTests
 
 RUN yum install -y hbase mysql
 
-RUN curl -s http://xenia.sote.hu/ftp/mirrors/www.apache.org/tomcat/tomcat-7/v7.0.57/bin/apache-tomcat-7.0.57.tar.gz | tar -xz -C /usr/local/
-ENV CATALINA_HOME /usr/local/apache-tomcat-7.0.57
+RUN curl -s http://xenia.sote.hu/ftp/mirrors/www.apache.org/tomcat/tomcat-7/v7.0.59/bin/apache-tomcat-7.0.59.tar.gz | tar -xz -C /usr/local/
+ENV CATALINA_HOME /usr/local/apache-tomcat-7.0.59
 
 RUN curl -s http://nodejs.org/dist/v0.10.32/node-v0.10.32-linux-x64.tar.gz | tar -xz -C /usr/local/
 RUN ln -s /usr/local/node-v0.10.32-linux-x64/bin/npm /usr/bin/npm
