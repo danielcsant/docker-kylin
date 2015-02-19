@@ -1,8 +1,45 @@
 : ${NODE_PREFIX=amb}
 : ${AMBARI_SERVER_NAME:=${NODE_PREFIX}0}
 : ${MYDOMAIN:=mycorp.kom}
-: ${IMAGE:="sequenceiq/kylin:0.6.4"}
-: ${DOCKER_OPTS:="--dns 127.0.0.1 --entrypoint /usr/local/serf/bin/start-serf-agent.sh -e KEYCHAIN=$KEYCHAIN"}
+: ${IMAGE:="sequenceiq/kylin:warmup"}
+: ${DOCKER_OPTS:="-p 42222:22" \
+                  "-p 53:53" \
+                  "-p 2181:2181" \
+                  "-p 5002:5002" \
+                  "-p 3306:3306" \
+                  "-p 5432:5432" \
+                  "-p 7070:7070" \
+                  "-p 7946:7946" \
+                  "-p 8010:8010" \
+                  "-p 8020:8020" \
+                  "-p 8025:8025" \
+                  "-p 8030:8030" \
+                  "-p 8040:8040" \
+                  "-p 8042:8042" \
+                  "-p 8080:8080" \
+                  "-p 8088:8088" \
+                  "-p 8050:8050" \
+                  "-p 8141:8141" \
+                  "-p 8440:8440" \
+                  "-p 8441:8441" \
+                  "-p 8670:8670" \
+                  "-p 9083:9083" \
+                  "-p 10000:10000" \
+                  "-p 10020:10020" \
+                  "-p 10033:10033" \
+                  "-p 13562:13562" \
+                  "-p 19888:19888" \
+                  "-p 50010:50010" \
+                  "-p 50070:50070" \
+                  "-p 50075:50075" \
+                  "-p 50090:50090" \
+                  "-p 50111:50111" \
+                  "-p 60000:60000" \
+                  "-p 60010:60010" \
+                  "-p 60020:60020" \
+                  "-p 60030:60030" \
+                  "--dns 127.0.0.1 --entrypoint /usr/local/serf/bin/start-serf-agent.sh -e KEYCHAIN=$KEYCHAIN"}
+#: ${DOCKER_OPTS:="--dns 127.0.0.1 --entrypoint /usr/local/serf/bin/start-serf-agent.sh -e KEYCHAIN=$KEYCHAIN"}
 : ${CLUSTER_SIZE:=1}
 : ${DEBUG:=1}
 : ${SLEEP_TIME:=2}
