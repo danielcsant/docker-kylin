@@ -1,4 +1,8 @@
-FROM sequenceiq/ambari:1.7.0
+
+#FROM sequenceiq/ambari:1.7.0
+
+FROM sequenceiq/ambari:1.6.0-warmup
+
 MAINTAINER SequenceIQ
 
 RUN curl -s http://xenia.sote.hu/ftp/mirrors/www.apache.org/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.tar.gz | tar -xz -C /usr/local/
